@@ -1,5 +1,6 @@
 
-an example application about how to use node to to some operations on mongo including connect, insert, find, etc
+an example application about how to use node 
+to some operations on mongo including connect, insert, find, etc
 
 
 -- you should install mongodb node module
