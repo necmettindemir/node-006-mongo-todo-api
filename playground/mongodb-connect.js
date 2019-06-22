@@ -41,6 +41,7 @@ MongoClient.connect(mongoUrl, (err, client) => {
 
     const db = client.db('TodoApp');
 
+    /*
     db.collection('Users').insertOne({
             //_id: 124,
             name: 'name4',
@@ -56,6 +57,26 @@ MongoClient.connect(mongoUrl, (err, client) => {
         console.log(JSON.stringify(result.ops[0]._id, 'undefined',2));
         console.log(JSON.stringify(result.ops[0]._id.getTimestamp(), 'undefined',2));
     });
+    */
+
+   db.collection('Users').insertOne({    
+            name: 'name42',
+            age: 27,
+            location: 'London'
+        }).then(
+
+            (result) => {
+                console.log(JSON.stringify(result.ops, 'undefined',2));
+                console.log('id: ',JSON.stringify(result.ops[0]._id, 'undefined',2));
+                console.log(JSON.stringify(result.ops[0]._id.getTimestamp(), 'undefined',2));
+            },
+            (err) => {
+                console.log('unable to insert user');
+                return;
+            }
+
+        ); 
+        
 
 
 
